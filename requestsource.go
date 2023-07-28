@@ -1,4 +1,4 @@
-package httpextra
+package httprequest
 
 import (
 	"fmt"
@@ -7,9 +7,9 @@ import (
 	"strings"
 )
 
-// GetRequestSource returns the source address of the request, after taking into account
+// Source returns the source address of the request, after taking into account
 // proxies and such.
-func GetRequestSource(request *http.Request) (string, error) {
+func Source(request *http.Request) (string, error) {
 	// If the "Forwarded" header is set, use that if it gives us anything.
 	//
 	// Information on the "Forwarded" header: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Forwarded
